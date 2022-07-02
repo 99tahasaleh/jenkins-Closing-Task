@@ -14,6 +14,13 @@ pipeline {
                 }
             }
         
+        
+         stage("Slack Notification"){
+            steps {
+                slackSend baseUrl: 'https://hooks.slack.com/services/', channel: '#jenkins-close-task', color: '439FE0', message: 'nice job !!!!!!!!!!!', tokenCredentialId: 'slack-demo', username: 'javahomecloud'
+                }
+            }
+        
     }
 
     post {
